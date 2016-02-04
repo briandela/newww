@@ -2,7 +2,7 @@ var _ = require('lodash');
 var P = require('bluebird');
 var validate = require('validate-npm-package-name');
 var npa = require('npm-package-arg');
-var PackageAgent = require("../agents/package");
+var PackageAgent = require('../agents/package');
 var DownloadAgent = require('../agents/download');
 var feature = require('../lib/feature-flags');
 var marketingblob = require('npm-marketing-sidebar-blob');
@@ -47,7 +47,7 @@ exports.show = function(request, reply) {
       && pkg.stars.indexOf(loggedInUser.name) > -1;
 
     pkg.isCollaboratedOnByUser = Boolean(loggedInUser)
-      && (typeof pkg.collaborators === "object")
+      && (typeof pkg.collaborators === 'object')
       && (loggedInUser.name in pkg.collaborators);
 
     pkg.hasStats = pkg.downloads || (pkg.bugs && pkg.bugs.url) || (pkg.pull_requests && pkg.pull_requests.url);
